@@ -2,9 +2,16 @@
   "name": "timelapse-front",
   "version": "0.1.0",
   "description": "Minimalist Timelapse",
+  "engines": {
+    "node": "6.9.2",
+    "npm": "3.10.9"
+  },
   "scripts": {
     "build": "NODE_ENV=production webpack --progress",
-    "start": "NODE_ENV=production webpack -p --progress",
+    "start": "node server.js",
+    "heroku-prebuild": "echo This runs before Heroku installs your dependencies.",
+    "heroku-postbuild": "echo This runs afterwards.",
+    "postinstall": "NODE_ENV=production webpack -p --progress && npm install express",
     "dev": "webpack-dev-server --inline --hot --progress",
     "eslint": "eslint src --ignore-path ./.gitignore --ext=.js,.jsx",
     "stylelint": "stylelint ./css/*.scss --config ./stylelint.config.js",

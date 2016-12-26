@@ -13,7 +13,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/static/'
+    publicPath: './'
   },
   module: {
     loaders: [{
@@ -37,15 +37,17 @@ module.exports = {
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /fr/),
     new ExtractTextPlugin('style.css'),
     new HtmlWebpackPlugin({
-      filename: 'index.html'
+      template: './index.html',
+      hash: true,
+      inject: true
     })
   ],
   devServer: {
     port: process.env.PORT || 8000,
     host: '0.0.0.0',
     colors: true,
-    // publicPath: '/',
-    // contentBase: './',
+    publicPath: '/',
+    contentBase: './',
     // historyApiFallback: true,
     proxy: {
       '/user/login': {

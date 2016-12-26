@@ -1,5 +1,10 @@
 language: node_js
 node_js:
-  - "6.1"
-
-script: npm run lint && npm run build
+- '6.1'
+script: npm run lint
+deploy:
+  provider: heroku
+  skip_cleanup: true
+  buildpack: nodejs
+  api_key:
+    secure: KXoP5d8vN6dCCedOHviykiOLsZ3gsedFoeyzYX5wriSIksSQdXb+DH7e3iD8zpNQRbml+8OVfIfY4mCVhPDBhAozr3xILyGbV99tl63eeWzhLaf5AJsM+7+p7l+y4b+SucsBzNOeRJtB5troXa+JX6vPYVwqBf0qPqxrKt0Efgl+KNbe3hDuKmeRQhgG99ea+5EinP52PWk2xdiCBcJsvEuuOqsKf382/8ghmJ9u7WnkQYf0aOfAbRGUPJxVruLWdCJ3j/72iDHV09tclFg6EZEi3K3fQh2yMkG96TqeD6Y46HW/7ja2lwDo5UjKjJAR94LiYq6m71lHH07U7gEgLIlnQ32xPX6CCliGhW6KfXLTPyDme/0IlX7/Qc36ziewNNTk4ZiPlvobpHGagKHLEoQ3NlqLuIxB9cEfpLKm5W1Ja6LWajo3lsO0nDxI4dntO9rP7ISKXDsZawBkq8Q9XEnLmSyax5oVHuETAnVWexscBieF/akgtthSDsSuRxDupWkbdtSHlUwiTK5gRFnxodbTwa829Yxghax0EApqj5TOyTAgH0Z1e3HvAU1wYdZpTD05SNf32UbK285sFqaAo3GJyzEk/+MyZ3zLtqx/VSB9YIb+JPBt6fNBnJcuGgfWCOKs0wF2Am3yZrLiG250ZdDYU01UDhGrL/PuSPZBUrM=
