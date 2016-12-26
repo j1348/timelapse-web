@@ -6,8 +6,9 @@
     "build": "NODE_ENV=production webpack --progress",
     "start": "NODE_ENV=production webpack -p --progress",
     "dev": "webpack-dev-server --inline --hot --progress",
-    "lint": "eslint src --ignore-path ../.gitignore --ext=.js,.jsx",
+    "eslint": "eslint src --ignore-path ./.gitignore --ext=.js,.jsx",
     "stylelint": "stylelint ./css/*.scss --config ./stylelint.config.js",
+    "lint": "npm run eslint && npm run stylelint",
     "stylefmt": "stylefmt ./css/*.scss -c ./stylelint.config.js",
     "validate": "npm ls"
   },
@@ -43,8 +44,8 @@
     "draft-js": "^0.9.1",
     "medium-draft": "^0.4.0",
     "moment": "^2.15.2",
-    "react": "15.3.2",
-    "react-dom": "15.3.2",
+    "react": "15.4.1",
+    "react-dom": "15.4.1",
     "whatwg-fetch": "^1.0.0"
   },
   "pre-commit": [
