@@ -1,0 +1,67 @@
+.days {
+    margin-top: 10vh;
+}
+
+.day {
+    display: inline-block;
+    width: 100%;
+    color: $action-color;
+    margin-top: 0.5rem;
+
+    &--today {
+        min-height: 40vh;
+
+        h4 {
+            color: $action-color2;
+        }
+    }
+
+    &--off {
+        color: $color;
+    }
+
+    &__content {
+        padding: 0 0 0 1rem;
+    }
+
+    &__oftheweek {
+        display: inline-block;
+        width: 11rem;
+        margin-right: 1rem;
+        text-align: right;
+    }
+
+    &__number {
+        display: inline-block;
+        width: 2.2rem;
+    }
+
+    &__content {
+        display: flex;
+    }
+
+    &__hour {
+        display: inline-block;
+        width: 10rem;
+        text-align: right;
+        margin-top: 1.6rem;
+        margin-right: 1rem;
+        font-size: 1.5rem;
+    }
+
+    &__txt {
+        display: inline-block;
+        margin-left: 0.1rem;
+        flex: 1;
+    }
+
+    p {
+        color: $default-color;
+        max-width: 60rem;
+    }
+}
+
+.month {
+    color: $field-color;
+    text-align: right;
+}

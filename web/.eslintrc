@@ -1,0 +1,49 @@
+{
+  "ecmaFeatures": {
+    "arrowFunctions": true,
+    "binaryLiterals": false,
+    "blockBindings": true,
+    "classes": true,
+    "defaultParams": true,
+    "destructuring": true,
+    "forOf": true,
+    "generators": true,
+    "modules": false,
+    "objectLiteralComputedProperties": true,
+    "objectLiteralDuplicateProperties": false,
+    "objectLiteralShorthandMethods": true,
+    "objectLiteralShorthandProperties": true,
+    "octalLiterals": false,
+    "regexUFlag": false,
+    "regexYFlag": false,
+    "restParams": true,
+    "spread": true,
+    "superInFunctions": true,
+    "templateStrings": true,
+    "unicodePointEscapes": true,
+    "globalReturn": false,
+    "allowForLoopAfterthoughts": true,
+    "jsx": true
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "parser": "babel-eslint",
+  "plugins": [
+    "babel",
+    "react"
+  ],
+  "extends": [
+    "airbnb"
+  ],
+  "rules": {
+    "indent": ["error", 4],
+    "react/jsx-key": 2,
+    "react/jsx-pascal-case": 2,
+    "react/jsx-uses-vars": 2,
+    "react/jsx-filename-extension": 0,
+    "no-console": 1
+  }
+
+}

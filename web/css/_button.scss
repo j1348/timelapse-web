@@ -1,0 +1,17 @@
+button.btn-small {
+    width: 4rem;
+}
+
+.icon-close {
+    opacity: 0.1;
+    transition: opacity 1s;
+    width: 2rem;
+    height: 2rem;
+    color: #888;
+    cursor: pointer;
+    position: relative;
+
+    .todo:hover & {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,55 @@
+{
+  "name": "timelapse-front",
+  "version": "0.1.0",
+  "description": "Minimalist Timelapse",
+  "scripts": {
+    "build": "NODE_ENV=production webpack --progress",
+    "start": "NODE_ENV=production webpack -p --progress",
+    "dev": "webpack-dev-server --inline --hot --progress",
+    "lint": "eslint src --ignore-path ../.gitignore --ext=.js,.jsx",
+    "stylelint": "stylelint ./css/*.scss --config ./stylelint.config.js",
+    "stylefmt": "stylefmt ./css/*.scss -c ./stylelint.config.js",
+    "validate": "npm ls"
+  },
+  "author": "me@jfroffice.me",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.7.2",
+    "babel-eslint": "7.1.0",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.0.15",
+    "babel-preset-react": "^6.0.15",
+    "babel-preset-stage-0": "^6.0.15",
+    "css-loader": "0.25.0",
+    "eslint": "3.10.0",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-babel": "^3.3.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.0.1",
+    "eslint-plugin-react": "6.6.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "html-webpack-plugin": "^2.24.0",
+    "node-sass": "^3.9.0",
+    "pre-commit": "^1.1.3",
+    "precommit-hook": "^3.0.0",
+    "react-hot-loader": "3.0.0-beta.6",
+    "sass-loader": "^4.0.0",
+    "style-loader": "^0.13.1",
+    "stylelint": "^7.5.0",
+    "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.12.1"
+  },
+  "dependencies": {
+    "draft-js": "^0.9.1",
+    "medium-draft": "^0.4.0",
+    "moment": "^2.15.2",
+    "react": "15.3.2",
+    "react-dom": "15.3.2",
+    "whatwg-fetch": "^1.0.0"
+  },
+  "pre-commit": [
+    "stylelint",
+    "lint",
+    "validate"
+  ]
+}

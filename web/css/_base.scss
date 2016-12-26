@@ -1,0 +1,75 @@
+html,
+body {
+    margin: 0;
+    padding: 1rem 0.8rem;
+    font-family: 'Merriweather', serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 100%;
+    background-color: $bk-color;
+    color: $default-color;
+}
+
+@media (max-width: 60em) {
+    html {
+        font-size: 80%;
+    }
+}
+
+@media (max-width: 48em) {
+    html {
+        font-size: 70%;
+    }
+}
+
+@media (max-width: 20em) {
+    html {
+        font-size: 60%;
+    }
+}
+
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+h1 {
+    font-size: 7.594rem;
+}
+
+h2 {
+    font-size: 5.063rem;
+}
+
+h3 {
+    font-size: 3.375rem;
+}
+
+h4 {
+    font-size: 2.25rem;
+}
+
+h5 {
+    font-size: 1.5rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.6;
+}

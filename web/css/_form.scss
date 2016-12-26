@@ -1,0 +1,45 @@
+.form-control {
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 0.6rem;
+
+    input,
+    button,
+    label {
+        display: inline-block;
+        border: none;
+        font-size: 1.2rem;
+        padding: 0.5rem 0.6rem;
+        width: 15rem;
+    }
+
+    label {
+        padding: 0.4rem 1rem;
+        text-align: right;
+    }
+
+    input {
+        background-color: $field-color;
+
+        &:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0 1000px $field-color inset;
+        }
+    }
+
+    button {
+        margin-top: 0.2rem;
+        padding: 0.7rem 0.8rem;
+        font-weight: 500;
+        color: $action-color2--hover;
+        background-color: #ddd;
+
+        &[type="submit"] {
+            margin-left: 15rem;
+        }
+
+        &:hover {
+            cursor: pointer;
+            color: white;
+            background-color: $action-color2--hover;
+        }
+    }
+}
