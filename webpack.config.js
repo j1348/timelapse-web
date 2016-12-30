@@ -2,7 +2,7 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const ENV = process.env.NODE_ENV || 'development';
 const API_SERVICE = 'http://127.0.0.1:7000';
 
 module.exports = {
@@ -41,7 +41,17 @@ module.exports = {
       hash: true,
       inject: true
     })
-  ],
+  ].concat(ENV === 'production' ? [
+        new webpack.DefinePlugin({
+          'process.env': {
+            NODE_ENV: JSON.stringify('production')
+          }
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            minimize: true,
+            comments: /^\**!|^ [0-9]+ $|@preserve|@license/
+        })
+    ] : []),
   devServer: {
     port: process.env.PORT || 8000,
     host: '0.0.0.0',
