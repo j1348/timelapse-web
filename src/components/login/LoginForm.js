@@ -37,7 +37,7 @@ class LoginForm extends React.Component {
 
         document.body.classList.remove('logged');
 
-        return (<form name="login" className="login-form" action="/user/login" method="POST">
+        return (<form name="login" action={`${process.env.API_URL}/user/login`} className="login-form" method="POST">
           <div className="form-control">
             <label htmlFor="email">email</label>
             <input type="text" name="email" id="email" aria-required="true" />

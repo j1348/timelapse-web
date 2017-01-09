@@ -3,8 +3,10 @@
 import 'whatwg-fetch';
 import { convertToRaw } from 'draft-js';
 
+const API_URL = process.env.API_URL;
+
 function updateTodo(headers, todo, raw) {
-    return fetch(`/todo/${todo._id}`, {
+    return fetch(`${API_URL}/todo/${todo._id}`, {
         headers,
         method: 'PUT',
         body: JSON.stringify({
@@ -15,7 +17,7 @@ function updateTodo(headers, todo, raw) {
 }
 
 function save(headers, todo, raw) {
-    return fetch('/todo', {
+    return fetch(`${API_URL}/todo`, {
         headers,
         method: 'POST',
         body: JSON.stringify({
@@ -26,7 +28,7 @@ function save(headers, todo, raw) {
 }
 
 export default {
-    get: token => fetch('/todo', {
+    get: token => fetch(`${API_URL}/todo`, {
         method: 'GET',
         headers: {
             Accept: 'application/json',
@@ -35,7 +37,7 @@ export default {
         },
     })
         .then(response => response.json()),
-    delete: (token, todo) => fetch(`/todo/${todo._id}`, {
+    delete: (token, todo) => fetch(`${API_URL}/todo/${todo._id}`, {
         method: 'DELETE',
         headers: {
             Accept: 'application/json',

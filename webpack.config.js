@@ -1,9 +1,10 @@
+require('dotenv').config();
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ENV = process.env.NODE_ENV || 'development';
-const API_SERVICE = 'http://127.0.0.1:7000';
+const API_URL = process.env.API_URL;
 
 module.exports = {
   devtool: 'source-map', //eval-cheap-module-source-map',
@@ -34,6 +35,11 @@ module.exports = {
       }]
   },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        API_URL: JSON.stringify(process.env.API_URL)
+      }
+    }),
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /fr/),
     new ExtractTextPlugin('style.css'),
     new HtmlWebpackPlugin({
@@ -42,11 +48,6 @@ module.exports = {
       inject: true
     })
   ].concat(ENV === 'production' ? [
-        new webpack.DefinePlugin({
-          'process.env': {
-            NODE_ENV: JSON.stringify('production')
-          }
-        }),
         new webpack.optimize.UglifyJsPlugin({
             minimize: true,
             comments: /^\**!|^ [0-9]+ $|@preserve|@license/
@@ -61,13 +62,13 @@ module.exports = {
     // historyApiFallback: true,
     proxy: {
       '/user/login': {
-          target: API_SERVICE
+          target: API_URL
       },
       '/user': {
-          target: API_SERVICE
+          target: API_URL
       },
       '/todo': {
-          target: API_SERVICE
+          target: API_URL
       }
     }
   }
