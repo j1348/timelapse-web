@@ -37,7 +37,8 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
-        API_URL: JSON.stringify(process.env.API_URL)
+        API_URL: JSON.stringify(process.env.API_URL),
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV)
       }
     }),
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /fr/),
