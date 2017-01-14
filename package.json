@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "NODE_ENV=production webpack --progress",
-    "start": "node server.js",
+    "start": "NODE_ENV=production node server.js",
     "heroku-prebuild": "echo This runs before Heroku installs your dependencies.",
     "heroku-postbuild": "echo This runs afterwards.",
     "postinstall": "NODE_ENV=production webpack -p --progress && npm install express",
@@ -52,8 +52,9 @@
     "draft-js": "^0.9.1",
     "medium-draft": "^0.4.0",
     "moment": "^2.15.2",
-    "react": "15.4.1",
-    "react-dom": "15.4.1",
+    "react": "15.4.2",
+    "react-addons-css-transition-group": "15.4.2",
+    "react-dom": "15.4.2",
     "whatwg-fetch": "^1.0.0"
   },
   "pre-commit": [
