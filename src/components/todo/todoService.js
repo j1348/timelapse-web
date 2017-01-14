@@ -30,9 +30,9 @@ function save(headers, todo, raw) {
 function deleteTodo(token, todo) {
     return fetch(`${API_URL}/todo/${todo._id}`, {
         method: 'DELETE',
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
             Authorization: `Bearer ${token}`
         }
     }).then(response => response.json());
@@ -41,9 +41,9 @@ function deleteTodo(token, todo) {
 function getTodo(token) {
     return fetch(`${API_URL}/todo`, {
         method: 'GET',
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
             Authorization: `Bearer ${token}`
         }
     }).then(response => response.json());
@@ -67,7 +67,7 @@ export default {
 
         save(headers, todo, raw)
             .then((newTodo) => {
-                todo = newTodo;
+                todo._id = newTodo._id;
             });
     }
 };
