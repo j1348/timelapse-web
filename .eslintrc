@@ -8,6 +8,7 @@
     "destructuring": true,
     "forOf": true,
     "generators": true,
+    "arrow-body-style": ["error", "always"],
     "modules": false,
     "objectLiteralComputedProperties": true,
     "objectLiteralDuplicateProperties": false,
@@ -39,6 +40,7 @@
   ],
   "rules": {
     "indent": ["error", 4],
+    "comma-dangle": ["error", "never"],
     "react/jsx-key": 2,
     "react/jsx-pascal-case": 2,
     "react/jsx-uses-vars": 2,

@@ -13,7 +13,7 @@ class Day extends React.Component {
         const now = moment();
         this.state = {
             now,
-            editorState: createEditorState(),
+            editorState: createEditorState()
         };
 
         this.onChange = (editorState) => {
@@ -86,7 +86,7 @@ class Day extends React.Component {
 }
 
 Day.propTypes = {
-    d: React.PropTypes.number,
+    d: React.PropTypes.number
 };
 
 export default Day;

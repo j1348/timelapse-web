@@ -24,7 +24,7 @@ class Todos extends React.Component {
             .then((tmp) => {
                 const todos = [{
                     name: 'new todo',
-                    editorState: createEditorState(),
+                    editorState: createEditorState()
                 }].concat(tmp.map((todo) => {
                     const data = todo.raw ? JSON.parse(todo.raw) : undefined;
                     const newTodo = todo;
@@ -66,7 +66,7 @@ class Todos extends React.Component {
 }
 
 Todos.propTypes = {
-    token: React.PropTypes.string,
+    token: React.PropTypes.string
 };
 
 export default Todos;

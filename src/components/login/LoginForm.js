@@ -55,7 +55,7 @@ class LoginForm extends React.Component {
 
 LoginForm.propTypes = {
     onLogin: React.PropTypes.func,
-    onLogout: React.PropTypes.func,
+    onLogout: React.PropTypes.func
 };
 
 export default LoginForm;
