@@ -1,6 +1,12 @@
 node_modules
 npm-debug.log
+selenium-debug.log
 .DS_Store
 .env
 dist/
 
+nightwatch
+nightwatch/selenium.jar
+nightwatch/chromedriver
+reports
+screenshots
