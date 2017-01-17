@@ -1,8 +1,12 @@
 language: node_js
 node_js:
 - '6.1'
-script: npm run lint
-after_success: npm run sauce
+script:
+  - npm run lint
+  - npm start &
+  - npm install -g nightwatch
+  - npm run sauce
+  - pkill node
 addons:
   sauce_connect:
     username: jfr1348

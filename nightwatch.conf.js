@@ -9,7 +9,7 @@ const config = { // we use a nightwatch.conf.js file so we can include comments 
   "page_objects_path": "test/pages",
   "output_folder": "./reports", // reports (test outcome) output by nightwatch
   "selenium": {
-    "start_process": true,
+    "start_process": false,
     "server_path": BINPATH + "selenium.jar", // downloaded by selenium-download module (see below)
     "log_path": "",
     "host": "127.0.0.1",
@@ -26,11 +26,16 @@ const config = { // we use a nightwatch.conf.js file so we can include comments 
       "selenium_port": 80,
       "silent": true,
       "screenshots": {
-        "enabled": true, // save screenshots to this directory (excluded by .gitignore)
+        "enabled": false, // save screenshots to this directory (excluded by .gitignore)
         "path": SCREENSHOT_PATH
       },
       "username" : process.env.SAUCE_USERNAME,     // if you want to use Saucelabs remember to
       "access_key" : process.env.SAUCE_ACCESS_KEY, // export your environment variables (see readme)
+      "desiredCapabilities": {
+        "javascriptEnabled": true,
+        "acceptSslCerts": true,
+        "tunnel-identifier": "${TRAVIS_JOB_NUMBER}"
+      },
       "globals": {
         "waitForConditionTimeout": 10000,    // wait for content on the page bsauefore continuing
         "data": require('./test/context/index.js')
@@ -42,7 +47,7 @@ const config = { // we use a nightwatch.conf.js file so we can include comments 
       "selenium_port": 4444,
       "silent": true,
       "screenshots": {
-        "enabled": true, // save screenshots taken here
+        "enabled": false, // save screenshots taken here
         "path": SCREENSHOT_PATH
       }, // this allows us to control the
       "globals": {
@@ -58,7 +63,8 @@ const config = { // we use a nightwatch.conf.js file so we can include comments 
           ]
         },
         "javascriptEnabled": true,
-        "acceptSslCerts": true
+        "acceptSslCerts": true,
+        "tunnel-identifier": "${TRAVIS_JOB_NUMBER}"
       }
     },
     "chrome": { // your local chrom browser (chromedriver)

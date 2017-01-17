@@ -7,7 +7,7 @@ module.exports = {
 
         page
             .navigate()
-            .waitForElementVisible('body')
+            .waitForElementVisible('body', 1000)
             .assert.title('Timelapse')
             .waitForElementVisible('@loginForm')
             .setValue('@email', data.email)

@@ -1,5 +1,5 @@
 module.exports = {
     email: 'timelapse-test@test.com',
     password: 'test123',
-    url: 'https://timelapse-web.herokuapp.com'
+    url: 'http://127.0.0.1:8000'
 };

@@ -10,7 +10,7 @@
     "build": "NODE_ENV=production webpack --progress",
     "start": "NODE_ENV=production node server.js",
     "test": "./node_modules/.bin/nightwatch --env local",
-    "sauce": "./node_modules/.bin/nightwatch -e chrome,chromemac,ie11,firefox",
+    "sauce": "./node_modules/.bin/nightwatch -e chrome,chromemac,firefox",
     "heroku-prebuild": "echo This runs before Heroku installs your dependencies.",
     "heroku-postbuild": "echo This runs afterwards.",
     "postinstall": "node nightwatch.conf.js && NODE_ENV=production webpack -p --progress && npm install express",
@@ -65,7 +65,6 @@
   },
   "pre-commit": [
     "stylelint",
-    "lint",
-    "validate"
+    "lint"
   ]
 }
