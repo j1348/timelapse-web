@@ -86,7 +86,7 @@ class Day extends React.Component {
 }
 
 Day.propTypes = {
-    d: React.PropTypes.number
+    d: React.PropTypes.number.isRequired
 };
 
 export default Day;

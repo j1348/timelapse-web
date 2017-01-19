@@ -66,7 +66,7 @@ class Todos extends React.Component {
 }
 
 Todos.propTypes = {
-    token: React.PropTypes.string
+    token: React.PropTypes.string.isRequired
 };
 
 export default Todos;
