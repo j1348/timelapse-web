@@ -9,7 +9,7 @@ const config = { // we use a nightwatch.conf.js file so we can include comments 
   "page_objects_path": "test/pages",
   "output_folder": "./reports", // reports (test outcome) output by nightwatch
   "selenium": {
-    "start_process": false,
+    "start_process": true,
     "server_path": BINPATH + "selenium.jar", // downloaded by selenium-download module (see below)
     "log_path": "",
     "host": "127.0.0.1",
@@ -24,6 +24,7 @@ const config = { // we use a nightwatch.conf.js file so we can include comments 
       "launch_url": "http://localhost", // we're testing a Public or "staging" site on Saucelabs
       "selenium_host": "ondemand.saucelabs.com",
       "selenium_port": 80,
+      "selenium_start_process": false,
       "silent": true,
       "screenshots": {
         "enabled": false, // save screenshots to this directory (excluded by .gitignore)
