@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/j1348/timelapse-web.svg?branch=master)](https://travis-ci.org/j1348/timelapse-web)
+[![Dependency Status](https://david-dm.org/j1348/timelapse-web.svg)](https://david-dm.org/j1348/timelapse-web)
 
 # Timelapse
 
