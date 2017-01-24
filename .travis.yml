@@ -1,12 +1,16 @@
 language: node_js
 node_js:
-- '6.1'
+  - '6.1'
 script:
-- npm run lint
-- npm start &
-- npm install -g nightwatch
-- npm run sauce
-- pkill node
+  - yarn run lint
+  - yarn run start &
+  - yarn global add nightwatch
+  - yarn run sauce
+  - pkill node
+cache:
+  yarn: true
+  directories:
+    - node_modules
 addons:
   sauce_connect:
     username: jfr1348
