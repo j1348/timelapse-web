@@ -5,8 +5,27 @@
 .todo {
     display: flex;
     align-items: flex-start;
-    border-left: $color 5px solid;
-    padding: 0 1rem;
-    margin: 0 0 5rem 6rem;
+    border-left: $color 4px solid;
+    margin: 0 0 4rem 5rem;
     max-width: 45rem;
+}
+
+@media (max-width: 60em) {
+    .todo {
+        border-left: $color 3px solid;
+        margin: 0 0 4rem 5rem;
+    }
+}
+
+@media (max-width: 48em) {
+    .todo {
+        border-left: $color 2px solid;
+        margin: 0 0 3rem 2rem;
+    }
+}
+
+@media (max-width: 20em) {
+    .todo {
+        margin: 0 0 2.5rem;
+    }
 }
