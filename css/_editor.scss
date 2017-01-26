@@ -2,14 +2,32 @@
     flex: 1;
     background-color: $bk-color;
     font-family: 'Open Sans', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: $default-color;
     padding: 0;
     margin-right: 1rem;
-    margin-bottom: 1rem;
 }
 
-.md-RichEditor-editor .public-DraftEditor-content,
+.md-RichEditor-editor {
+    .public-DraftEditor-content,
+    .public-DraftEditorPlaceholder-root {
+        padding: 0 15px;
+    }
+
+    .public-DraftEditor-content {
+        min-height: 0;
+        margin: 0.8rem 0;
+    }
+}
+
+.public-DraftEditor-content .md-block-paragraph {
+    margin: 0.7rem 0;
+
+    span {
+        line-height: 1.6;
+    }
+}
+
 .md-RichEditor-editor .public-DraftEditorPlaceholder-root {
-    padding: 0 15px;
+    padding-left: 2.8rem;
 }
