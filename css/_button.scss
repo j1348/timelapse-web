@@ -3,14 +3,18 @@ button.btn-small {
 }
 
 .icon-close {
-    opacity: 0.1;
-    transition: opacity 1s;
-    width: 2rem;
-    height: 2rem;
+    opacity: 0;
+    transition: opacity 500ms;
+    width: 1.6rem;
+    height: 1.6rem;
     color: #888;
     cursor: pointer;
-    position: relative;
+    position: absolute;
+    left: -38px;
+    z-index: 1;
+    top: 0;
 
+    .todo:focus &,
     .todo:hover & {
         opacity: 1;
     }
