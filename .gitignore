@@ -5,6 +5,9 @@ selenium-debug.log
 .env
 dist/
 
+.jshintignore
+.jshintrc
+fix-commit.sh
 nightwatch
 nightwatch/selenium.jar
 nightwatch/chromedriver
