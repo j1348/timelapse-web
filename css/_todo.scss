@@ -4,6 +4,7 @@
 
 .todo {
     display: flex;
+    position: relative;
     align-items: flex-start;
     border-left: $color 4px solid;
     margin: 0 0 4rem 5rem;
