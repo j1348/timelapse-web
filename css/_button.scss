@@ -1,5 +1,18 @@
 button.btn-small {
-    width: 4rem;
+    border-radius: 6px;
+}
+
+/* logout btn quite awful for now */
+.logged button.btn-small {
+    width: 50px;
+    height: 46px;
+}
+
+@media (max-width: 60em) {
+    .logged button.btn-small {
+        width: 46px;
+        height: 45px;
+    }
 }
 
 .icon-close {
