@@ -17,20 +17,24 @@ module.exports = {
     publicPath: './'
   },
   module: {
-    loaders: [{
+    rules: [{
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('style', [
-                  'css',
-                  'sass'
-              ].join('!'))
+        use: [
+            'style-loader',
+            'css-loader',
+            'sass-loader'
+        ]
       },{
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style', [
-                  'css'
-              ].join('!'))
+        use: [
+            'style-loader',
+            'css-loader'
+        ]
       },{
         test: /\.js$/,
-        loaders: ['babel'],
+        use: [
+            'babel-loader'
+        ],
         include: path.join(__dirname, 'src')
       }]
   },
@@ -42,7 +46,10 @@ module.exports = {
       }
     }),
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /fr/),
-    new ExtractTextPlugin('style.css'),
+    new ExtractTextPlugin({
+        filename: 'style.css',
+        disable: false
+    }),
     new HtmlWebpackPlugin({
       template: './index.html',
       hash: true,
@@ -51,6 +58,7 @@ module.exports = {
   ].concat(ENV === 'production' ? [
         new webpack.optimize.UglifyJsPlugin({
             minimize: true,
+            sourceMap: true,
             comments: /^\**!|^ [0-9]+ $|@preserve|@license/
         })
     ] : []),

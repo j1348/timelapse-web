@@ -13,7 +13,7 @@
     "heroku-postbuild": "echo This runs afterwards.",
     "test": "node nightwatch.conf.js && ./node_modules/.bin/nightwatch --env local",
     "sauce": "node nightwatch.conf.js && ./node_modules/.bin/nightwatch -e chrome,chromemac,firefox",
-    "postinstall": "NODE_ENV=production webpack -p --progress",
+    "postinstall": "NODE_ENV=production webpack -p --progress --display-depth",
     "dev": "webpack-dev-server --inline --hot --progress",
     "eslint": "eslint src --ignore-path ./.gitignore --ext=.js,.jsx",
     "stylelint": "stylelint ./css/*.scss --config ./stylelint.config.js",
@@ -38,7 +38,7 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^3.0.2",
     "eslint-plugin-react": "^6.9.0",
-    "extract-text-webpack-plugin": "^1.0.1",
+    "extract-text-webpack-plugin": "^2.0.0-rc.0",
     "html-webpack-plugin": "^2.24.0",
     "node-sass": "^4.4.0",
     "optimist": "^0.6.1",
@@ -48,8 +48,7 @@
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",
     "stylelint": "^7.5.0",
-    "webpack": "^1.12.2",
-    "webpack-dev-server": "^1.12.1"
+    "webpack": "^2.2.0"
   },
   "dependencies": {
     "draft-js": "^0.9.1",
