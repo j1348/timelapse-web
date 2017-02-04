@@ -25,11 +25,22 @@ export default class App extends Component {
         }
 
         return (<div className="container">
-          { content }
+          <header>
+            <div className="title">
+              <h2>Timelapse</h2>
+            </div>
+            <nav className="nav">
+              <ul>
+                <li><a>Sign-Up</a></li>
+                <li><a>Login</a></li>
+              </ul>
+            </nav>
+          </header>
           <LoginForm
             onLogin={(token) => { this.onLogin(token); }}
             onLogout={() => { this.onLogout(); }}
           />
+          { content }
         </div>);
     }
 }
