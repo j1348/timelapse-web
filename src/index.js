@@ -1,9 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import 'string.prototype.startswith';
 import 'medium-draft/lib/index.css';
 import App from './App';
+import '../css/style.scss';
 
-require('string.prototype.startswith');
-require('../css/style.scss');
-
-ReactDOM.render(<App />, document.getElementById('main'));
+render(<App />, document.getElementById('main'));
