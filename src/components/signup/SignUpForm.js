@@ -10,11 +10,11 @@ class SignUpForm extends React.Component {
         return (<form name="signup" action={`${process.env.API_URL}/user`} className="signup-form" method="POST">
           <div className="form-control">
             <label htmlFor="name">name</label>
-            <input type="text" name="text" id="name" aria-required="true" />
+            <input type="text" name="name" id="name" aria-required="true" />
           </div>
           <div className="form-control">
             <label htmlFor="username">username</label>
-            <input type="text" name="text" id="username" aria-required="true" />
+            <input type="text" name="username" id="username" aria-required="true" />
           </div>
           <div className="form-control">
             <label htmlFor="email">email</label>
