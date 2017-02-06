@@ -1,22 +1,15 @@
-var conf = require('../../nightwatch.conf.js');
+var conf = require('../../nightwatch.conf');
+const { email, password } = require('../context/index');
 
 module.exports = {
-    'login': function (browser) {
-        const data = browser.globals.data;
-        const page = browser.page.login();
+    login: function (browser) {
+        const auth = browser.page.auth();
+        const menu = browser.page.menu();
 
-        page
-            .navigate()
-            .waitForElementVisible('body', 1000)
-            .assert.title('Timelapse')
-            .waitForElementVisible('@loginForm')
-            .setValue('@email', data.email)
-            .setValue('@password', data.password)
-            .submitForm('@loginForm')
-            .waitForElementVisible('@logoutBtn')
-            .waitForElementVisible('@todos')
-            .click('@logoutBtn');
+        menu.navigate()
+            .login();
 
-        browser.end();
+        auth.login(email, password)
+            .logout();
     }
 };
