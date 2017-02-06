@@ -42,10 +42,12 @@
     "indent": ["error", 4],
     "comma-dangle": ["error", "never"],
     "react/jsx-key": 2,
+    "react/jsx-indent": 0,
     "react/jsx-pascal-case": 2,
     "react/jsx-uses-vars": 2,
     "react/jsx-filename-extension": 0,
     "react/no-array-index-key": 0,
+    "react/prop-types": 0,
     "no-console": 1
   }
 

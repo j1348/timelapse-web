@@ -29,7 +29,7 @@ function getToken() {
     if (qs && qs.token) {
         localStorage.setItem('token', qs.token);
         // console.log('get token from login redirect url');
-        window.history.pushState({ token: qs.token }, 'Timelapse', '/');
+       // window.history.pushState({ token: qs.token }, 'Timelapse', '/');
         return qs.token;
     }
 
