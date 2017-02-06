@@ -1,15 +1,15 @@
-button.btn-small {
-    border-radius: 6px;
+/* logout btn quite awful for now */
+.logout-form button.btn-small {
+    width: 53px;
+    height: 51px;
 }
 
-/* logout btn quite awful for now */
-.logged button.btn-small {
-    width: 50px;
-    height: 46px;
+.logout-form button {
+    border: none;
 }
 
 @media (max-width: 60em) {
-    .logged button.btn-small {
+    .logout-form button.btn-small {
         width: 46px;
         height: 45px;
     }

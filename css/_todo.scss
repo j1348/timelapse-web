@@ -6,21 +6,21 @@
     display: flex;
     position: relative;
     align-items: flex-start;
-    border-left: $color 4px solid;
+    border-left: $color-highlight 4px solid;
     margin: 0 0 4rem 5rem;
-    max-width: 45rem;
+    max-width: 80vw;
 }
 
 @media (max-width: 60em) {
     .todo {
-        border-left: $color 3px solid;
+        border-left: $color-highlight 3px solid;
         margin: 0 0 4rem 5rem;
     }
 }
 
 @media (max-width: 48em) {
     .todo {
-        border-left: $color 2px solid;
+        border-left: $color-highlight 2px solid;
         margin: 0 0 3rem 2rem;
     }
 }

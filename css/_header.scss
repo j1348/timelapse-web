@@ -1,0 +1,116 @@
+.header {
+    display: flex;
+    margin: 3rem 4rem;
+
+    h1,
+    h2 {
+        font-weight: 700;
+    }
+
+    &-col {
+        flex: 1;
+    }
+}
+
+.nav {
+    animation: moveright 1s ease-in 0.5s;
+    margin: 6rem 0 5rem 6rem;
+
+    ul {
+        padding: 0;
+        list-style-type: none;
+
+        li {
+            opacity: 0;
+            display: inline-block;
+            font-size: 1.2rem;
+            margin: 0 4rem 0 1rem;
+            animation: appear 1s ease-in-out 0.5s forwards;
+
+            a {
+                color: $color;
+                font-weight: 500;
+                font-size: 1.5rem;
+                position: relative;
+                cursor: pointer;
+                padding: 0.6rem 1.5rem;
+                text-decoration: none;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 2px;
+                    bottom: -1px;
+                    left: 0;
+                    background-color: $action-color--hover;
+                    visibility: hidden;
+                    transform: scaleX(0);
+                    transition: all 0.3s ease-in-out;
+                }
+
+                &:hover::before {
+                    visibility: visible;
+                    transform: scaleX(1);
+                }
+
+                &.active {
+                    color: white;
+                    background-color: $action-color--hover;
+
+                    &::before {
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.logout-form {
+    position: absolute;
+    right: 2rem;
+    top: 3rem;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleup {
+    from {
+        transform-origin: 50% 50%;
+        transform: scale(0.6);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes moveright {
+    from {
+        transform-origin: 50% 50%;
+        transform: translate(-10px, 0) scale(1.1);
+    }
+
+    to {
+        transform: translate(0, 0) scale(1);
+    }
+}

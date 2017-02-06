@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import LoginForm from './components/login/LoginForm';
+import { browserHistory } from 'react-router';
+import { resetToken } from './components/login/token';
 import Todos from './components/todo/Todos';
 // import Timeline from './components/timeline/Timeline';
 
@@ -8,28 +9,28 @@ export default class App extends Component {
         super();
         this.state = {};
     }
-    onLogin(token) {
-        this.state.token = token;
-        this.setState({ token });
+    componentWillMount() {
+        this.state.token = this.props.params.token;
+        browserHistory.push('/#/');
     }
-    onLogout() {
-        this.state = {};
-        this.setState({});
+    disconnect() {
+        resetToken();
+        this.state.token = null;
+        browserHistory.push('/');
+        window.location.reload();
     }
     render() {
-        let content = '';
-
-        if (this.state.token) {
-            content = (<Todos token={this.state.token} />);
-            // content = (<Timeline />);
-        }
-
         return (<div className="container">
-          { content }
-          <LoginForm
-            onLogin={(token) => { this.onLogin(token); }}
-            onLogout={() => { this.onLogout(); }}
-          />
+            <div className="logout-form">
+              <div className="form-control">
+                <button className="btn-small" type="button" onClick={() => { this.disconnect(); }}>
+                  <svg className="icon-disconnect">
+                    <use xlinkHref="#icon-disconnect" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <Todos token={this.state.token} />
         </div>);
     }
 }

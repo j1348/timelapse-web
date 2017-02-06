@@ -1,12 +1,11 @@
 import React from 'react';
-import { getToken, resetToken } from './token';
+import { getToken } from './token';
 
 class LoginForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
     }
-
     componentWillMount() {
         const token = getToken();
         if (token) {
@@ -14,29 +13,10 @@ class LoginForm extends React.Component {
             this.props.onLogin(token);
         }
     }
-
     disconnect() {
-        resetToken();
         this.setState({ token: null });
-        this.props.onLogout();
     }
-
     render() {
-        if (this.state.token) {
-            document.body.classList.add('logged');
-            return (<div className="login-form">
-              <div className="form-control">
-                <button className="btn-small" type="button" onClick={() => { this.disconnect(); }}>
-                  <svg className="icon-disconnect">
-                    <use xlinkHref="#icon-disconnect" />
-                  </svg>
-                </button>
-              </div>
-            </div>);
-        }
-
-        document.body.classList.remove('logged');
-
         return (<form name="login" action={`${process.env.API_URL}/user/login`} className="login-form" method="POST">
           <div className="form-control">
             <label htmlFor="email">email</label>
@@ -47,15 +27,14 @@ class LoginForm extends React.Component {
             <input type="password" name="password" id="password" aria-required="true" />
           </div>
           <div className="form-control">
-            <button type="submit">Sign-In</button>
+            <button type="submit">Log-In</button>
           </div>
         </form>);
     }
 }
 
 LoginForm.propTypes = {
-    onLogin: React.PropTypes.func.isRequired,
-    onLogout: React.PropTypes.func.isRequired
+    onLogin: React.PropTypes.func.isRequired
 };
 
 export default LoginForm;

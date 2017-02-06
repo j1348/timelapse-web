@@ -14,7 +14,7 @@ module.exports = {
         email: 'input[name="email"]',
         password: 'input[name="password"]',
         loginForm: 'form[name="login"]',
-        logoutBtn: '.login-form button.btn-small',
+        logoutBtn: '.logout-form button.btn-small',
         todos: '.todos'
     }
 };
