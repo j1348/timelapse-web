@@ -9,18 +9,19 @@ module.exports = {
                 .submitForm('@loginForm');
         },
         logout: function() {
-            return this.waitForElementVisible('@logoutBtn')
-                .click('@logoutBtn');
+            return this.waitForElementVisible('@todos')
+            this.waitForElementVisible('@logoutBtn')
+            .click('@logoutBtn');
         }
     }],
     url: function () {
-        console.log(process.env.BASE_URL);
         return process.env.BASE_URL;
     },
     elements: {
         email: 'input[name="email"]',
         password: 'input[name="password"]',
         loginForm: 'form[name="login"]',
-        logoutBtn: '.logout-form button.btn-small',
+        todos: '.todos',
+        logoutBtn: '.logout-form button[name="close"]'
     }
 };

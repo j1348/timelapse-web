@@ -64,8 +64,7 @@ const config = { // we use a nightwatch.conf.js file so we can include comments 
           ]
         },
         "javascriptEnabled": true,
-        "acceptSslCerts": true,
-        "tunnel-identifier": "${TRAVIS_JOB_NUMBER}"
+        "acceptSslCerts": true
       }
     },
     "chrome": { // your local chrom browser (chromedriver)

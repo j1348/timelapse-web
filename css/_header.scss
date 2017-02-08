@@ -35,6 +35,7 @@
                 cursor: pointer;
                 padding: 0.6rem 1.5rem;
                 text-decoration: none;
+                transition: all 0.3s;
 
                 &::before {
                     content: "";

@@ -23,7 +23,7 @@ export default class App extends Component {
         return (<div className="container">
             <div className="logout-form">
               <div className="form-control">
-                <button className="btn-small" type="button" onClick={() => { this.disconnect(); }}>
+                <button name="close" onClick={() => { this.disconnect(); }}>
                   <svg className="icon-disconnect">
                     <use xlinkHref="#icon-disconnect" />
                   </svg>

@@ -1,15 +1,11 @@
-/* logout btn quite awful for now */
-.logout-form button.btn-small {
+button[name="close"] {
     width: 53px;
-    height: 51px;
-}
-
-.logout-form button {
+    height: 50px;
     border: none;
 }
 
 @media (max-width: 60em) {
-    .logout-form button.btn-small {
+    button[name="close"] {
         width: 46px;
         height: 45px;
     }
@@ -27,6 +23,7 @@
     z-index: 1;
     top: 0;
 
+    /* TODO: need to change this */
     .todo:focus &,
     .todo:hover & {
         opacity: 1;
