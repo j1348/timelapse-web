@@ -21,6 +21,7 @@ export default class App extends Component {
     }
     render() {
         return (<div className="container">
+            <Todos token={this.state.token} />
             <div className="logout-form">
               <div className="form-control">
                 <button name="close" onClick={() => { this.disconnect(); }}>
@@ -30,7 +31,6 @@ export default class App extends Component {
                 </button>
               </div>
             </div>
-            <Todos token={this.state.token} />
         </div>);
     }
 }

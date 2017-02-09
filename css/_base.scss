@@ -22,10 +22,26 @@ body {
     }
 }
 
-@media (max-width: 20em) {
+@media (max-width: 23em) {
     html,
     body {
-        font-size: 60%;
+        font-size: 65%;
+
+        h1 {
+            font-size: 5.2rem;
+        }
+
+        .header {
+            margin: 3rem 0 3rem 3rem;
+        }
+
+        .nav {
+            margin: 6rem 0 5rem 3rem;
+        }
+
+        .todo {
+            max-width: none;
+        }
     }
 }
 
