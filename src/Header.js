@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router';
+import Alert from 'react-s-alert';
 
 export default function (props) {
     return (<div className="header">
+              <Alert stack={{ limit: 1 }} />
               <div className="header-col">
                 <h1>Timelapse</h1>
               </div>
