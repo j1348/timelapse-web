@@ -1,6 +1,7 @@
 require('dotenv').config();
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ENV = process.env.NODE_ENV || 'development';
@@ -35,6 +36,9 @@ module.exports = {
       }]
   },
   plugins: [
+    new CopyWebpackPlugin([
+        { from: 'dummy.html' }
+    ]),
     new webpack.DefinePlugin({
       'process.env': {
         API_URL: JSON.stringify(process.env.API_URL),
