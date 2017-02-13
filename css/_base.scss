@@ -22,7 +22,7 @@ body {
     }
 }
 
-@media (max-width: 23em) {
+@media (max-width: 33em) {
     html,
     body {
         font-size: 65%;
@@ -32,11 +32,16 @@ body {
         }
 
         .header {
-            margin: 3rem 0 3rem 3rem;
+            margin: 0;
+            padding: 1rem;
         }
 
         .nav {
-            margin: 6rem 0 5rem 3rem;
+            margin: 4rem 0;
+
+            & ul li a {
+                font-size: 2rem;
+            }
         }
 
         .todo {
