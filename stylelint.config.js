@@ -4,7 +4,7 @@ module.exports = {
         except: [
           "blockless-after-same-name-blockless",
           "first-nested",
-          "blockless-group"
+          "blockless-after-blockless"
         ],
         ignore: ["after-comment"],
       } ],
@@ -43,7 +43,6 @@ module.exports = {
       "declaration-block-no-duplicate-properties": [ true, {
         ignore: ["consecutive-duplicates-with-different-values"],
       } ],
-      "declaration-block-no-ignored-properties": true,
       "declaration-block-no-redundant-longhand-properties": true,
       "declaration-block-no-shorthand-property-overrides": true,
       "declaration-block-semicolon-newline-after": "always-multi-line",
@@ -82,7 +81,6 @@ module.exports = {
       "media-feature-colon-space-before": "never",
       "media-feature-name-case": "lower",
       "media-feature-name-no-unknown": true,
-      "media-feature-no-missing-punctuation": true,
       "media-feature-parentheses-space-inside": "never",
       "media-feature-range-operator-space-after": "always",
       "media-feature-range-operator-space-before": "always",
@@ -98,11 +96,8 @@ module.exports = {
       "number-no-trailing-zeros": true,
       "property-case": "lower",
       "property-no-unknown": true,
-      "rule-nested-empty-line-before": [ "always-multi-line", {
+      "rule-empty-line-before": [ "always-multi-line", {
         except: ["first-nested"],
-        ignore: ["after-comment"],
-      } ],
-      "rule-non-nested-empty-line-before": [ "always-multi-line", {
         ignore: ["after-comment"],
       } ],
       "selector-attribute-brackets-space-inside": "never",
@@ -114,7 +109,6 @@ module.exports = {
       "selector-list-comma-newline-after": "always",
       "selector-list-comma-space-before": "never",
       "selector-max-empty-lines": 0,
-      "selector-no-empty": true,
       "selector-pseudo-class-case": "lower",
       "selector-pseudo-class-no-unknown": true,
       "selector-pseudo-class-parentheses-space-inside": "never",
