@@ -70,7 +70,8 @@
 
 @media (max-width: 73em) {
     .header {
-        display: inline-block;
+        display: flex;
+        flex-direction: column;
     }
 }
 
