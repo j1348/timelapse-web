@@ -33,9 +33,6 @@ class Todos extends React.Component {
                 }).reverse());
 
                 this.setState({ todos });
-            })
-            .catch((err) => {
-                console.warn('parsing failed', err);
             });
     }
 
@@ -43,10 +40,7 @@ class Todos extends React.Component {
         this.state.todos.splice(i, 1);
         this.setState({ todos: this.state.todos });
 
-        todoService.delete(this.props.token, todo)
-            .catch((err) => {
-                console.warn('request failed during delete', err);
-            });
+        todoService.delete(this.props.token, todo);
     }
 
     render() {
