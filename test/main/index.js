@@ -13,3 +13,15 @@ module.exports = {
             .logout();
     }
 };
+
+
+// Sample of conditional testing
+//
+// browser.element('css selector', 'a[name="login"]', function(result){
+//     if (result.value) {
+//         console.log(result.value);
+//         // Element is present, do the appropriate tests
+//     } else {
+//         // Element is not present.
+//     }
+// });
