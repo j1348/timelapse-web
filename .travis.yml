@@ -4,10 +4,10 @@ node_js:
 script:
 - yarn run lint
 - yarn run build
-- yarn run start &
-- yarn global add nightwatch
-- yarn run sauce
-- pkill node
+#- yarn run start &
+#- yarn global add nightwatch
+#- yarn run sauce
+#- pkill node
 cache:
   yarn: true
   directories:
