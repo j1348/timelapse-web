@@ -70,11 +70,19 @@
             display: block;
             width: 100%;
             font-size: 1.8rem;
-            padding: 0.7rem 1rem 0.6rem 0;
+            padding: 1.4rem 1rem 0.4rem 0;
+        }
+
+        label {
+            font-size: 1.5rem;
+        }
+
+        button {
+            padding: 0.7rem 1rem 0.8rem 0;
         }
 
         input {
-            padding: 1rem;
+            padding: 0.9rem 1rem;
         }
 
         button[type="submit"] {

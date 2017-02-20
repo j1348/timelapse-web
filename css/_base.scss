@@ -33,17 +33,18 @@ body {
 
         .header {
             margin: 0 1rem 0 1.5rem;
-            padding: 1rem;
+            padding: 2rem 1rem 0;
         }
 
         .nav {
-            margin: 4rem 0;
+            margin: 3.5rem 0;
 
             & ul li {
                 margin: 0 3.6rem 0 0;
 
                 a {
-                    font-size: 2rem;
+                    padding: 0.6rem 1.8rem;
+                    font-size: 1.9rem;
                 }
             }
         }
