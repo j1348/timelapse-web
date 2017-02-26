@@ -45,6 +45,10 @@ body {
                 a {
                     padding: 0.6rem 1.8rem;
                     font-size: 1.9rem;
+
+                    &:hover::before {
+                        visibility: hidden;
+                    }
                 }
             }
         }
