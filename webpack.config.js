@@ -38,7 +38,8 @@ module.exports = {
   },
   plugins: [
     new CopyWebpackPlugin([
-        { from: 'dummy.html' }
+        { from: 'dummy.html' },
+        { from: '_redirects' }
     ]),
     new FaviconsWebpackPlugin({
        // Your source logo
