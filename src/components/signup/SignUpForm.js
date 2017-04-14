@@ -1,13 +1,44 @@
 import React from 'react';
+import Alert from 'react-s-alert';
+
+const API_URL = process.env.API_URL;
 
 class SignUpForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
     }
+    onSubmit(e) {
+        const target = e.target;
+        const body = {
+            name: target[0].value,
+            username: target[1].value,
+            email: target[2].value,
+            password: target[3].value
+        };
+
+        e.preventDefault();
+
+        fetch(`${API_URL}/user`, {
+            method: 'POST',
+            body: JSON.stringify(body)
+        }).then(response => response.json())
+        .then((data) => {
+            if (data.error) {
+                Alert.warning(data.message, {
+                    position: 'top',
+                    timeout: 5000
+                });
+                return;
+            }
+
+            this.props.onSuccess(data.token);
+            setTimeout(() => { target.submit(); }, 0);
+        });
+    }
 
     render() {
-        return (<form name="signup" action={`${process.env.API_URL}/user`} className="signup-form" method="POST">
+        return (<form name="signup" target="dummy" onSubmit={(e) => { this.onSubmit(e); }} className="signup-form" method="POST">
           <div className="form-control">
             <label htmlFor="name">name</label>
             <input type="text" name="name" id="name" aria-required="true" />
@@ -30,5 +61,9 @@ class SignUpForm extends React.Component {
         </form>);
     }
 }
+
+SignUpForm.propTypes = {
+    onSuccess: React.PropTypes.func.isRequired
+};
 
 export default SignUpForm;

@@ -40,7 +40,7 @@ class LoginForm extends React.Component {
                 return;
             }
 
-            this.props.onLogin(data.token);
+            this.props.onSuccess(data.token);
             setTimeout(() => { target.submit(); }, 0);
         });
     }
@@ -71,7 +71,7 @@ class LoginForm extends React.Component {
 }
 
 LoginForm.propTypes = {
-    onLogin: React.PropTypes.func.isRequired
+    onSuccess: React.PropTypes.func.isRequired
 };
 
 export default LoginForm;
