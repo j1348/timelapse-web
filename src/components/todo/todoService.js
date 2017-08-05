@@ -1,5 +1,5 @@
-/* eslint no-underscore-dangle: ["error", { "allow": ["_id"] }]*/
-/* eslint-disable no-param-reassign*/
+/* eslint no-underscore-dangle: ["error", { "allow": ["_id"] }] */
+/* eslint-disable no-param-reassign */
 import 'whatwg-fetch';
 import { convertToRaw } from 'draft-js';
 

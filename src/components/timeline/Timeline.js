@@ -1,4 +1,4 @@
-/* eslint func-names: ["error", "never"]*/
+/* eslint func-names: ["error", "never"] */
 import React from 'react';
 import moment from 'moment';
 import Day from './Day';
