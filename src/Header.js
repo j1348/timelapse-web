@@ -6,7 +6,7 @@ export default function (props) {
     return (<div className="header">
               <Alert stack={{ limit: 1 }} />
               <div className="header-col">
-                <h1>Timelapse</h1>
+                <h2>Smashing Time</h2>
               </div>
               <div className="header-col">
                 <nav className="nav">
