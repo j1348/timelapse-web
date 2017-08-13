@@ -17,7 +17,7 @@ class Timeline extends React.Component {
 
     render() {
         return (<div className="days">
-          {this.pastDays.map((d, i) => (<Day key={i} d={d} />))}
+        {this.pastDays.map((d, i) => (<Day key={i} d={d} />))}
         </div>);
     }
 }

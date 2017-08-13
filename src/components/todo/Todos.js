@@ -45,16 +45,16 @@ class Todos extends React.Component {
 
     render() {
         return (<div className="todos">
-          { this.state.todos.map((todo, i) => (<div className="todo" key={i}>
+        { this.state.todos.map((todo, i) => (<div className="todo" key={i}>
             <svg className="icon-close" onClick={() => { this.delete(todo, i); }}>
-              <use xlinkHref="#icon-close" />
+            <use xlinkHref="#icon-close" />
             </svg>
             <Editor
-              editorState={todo.editorState}
-              placeholder="..."
-              onChange={(editorState) => { this.onChange(editorState, i); }}
+            editorState={todo.editorState}
+            placeholder="..."
+            onChange={(editorState) => { this.onChange(editorState, i); }}
             />
-          </div>)) }
+        </div>)) }
         </div>);
     }
 }

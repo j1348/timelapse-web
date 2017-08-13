@@ -16,7 +16,7 @@
     "dev": "webpack-dev-server --inline --hot --progress",
     "eslint": "eslint src --ignore-path ./.gitignore --ext=.js,.jsx",
     "stylelint": "stylelint ./css/*.scss --config ./stylelint.config.js",
-    "lint": "npm run eslint && npm run stylelint",
+    "lint": "npm run eslint && npm run stylelint && eclint check",
     "stylefmt": "stylefmt ./css/*.scss -c ./stylelint.config.js",
     "validate": "npm ls"
   },
