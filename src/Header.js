@@ -11,8 +11,14 @@ export default function (props) {
             <div className="header-col">
                 <nav className="nav">
                 <ul>
-                    <li><Link to="/login" name="login" activeClassName="active">Login</Link></li>
-                    <li><Link to="/signup" name="signup" activeClassName="active">Sign-Up</Link></li>
+                    <li>
+                        <Link to="/login" name="login" activeClassName="active">Login
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/signup" name="signup" activeClassName="active">Sign-Up
+                        </Link>
+                    </li>
                     </ul>
                 </nav>
                 {props.children}

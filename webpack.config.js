@@ -27,18 +27,17 @@ const faviconPlugin = new FaviconsWebpackPlugin({
     // favicon app title (see https://github.com/haydenbleasel/favicons#usage)
     title: 'Webpack App',
 
-    // which icons should be generated (see https://github.com/haydenbleasel/favicons#usage)
     icons: {
-    android: true,
-    appleIcon: true,
-    appleStartup: true,
-    coast: false,
-    favicons: true,
-    firefox: true,
-    opengraph: false,
-    twitter: false,
-    yandex: false,
-    windows: false
+        android: true,
+        appleIcon: true,
+        appleStartup: true,
+        coast: false,
+        favicons: true,
+        firefox: true,
+        opengraph: false,
+        twitter: false,
+        yandex: false,
+        windows: false
     }
 });
 

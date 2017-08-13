@@ -11,9 +11,10 @@ import SignUp from './SignUp';
 import App from './App';
 import '../css/style.scss';
 
+const SENTRY = 'https://9b7d1cedf93249389f90839b13dbf4c5@sentry.io/129263';
 
 Raven
-    .config((process.env.NODE_ENV !== 'production') ? '' : 'https://9b7d1cedf93249389f90839b13dbf4c5@sentry.io/129263')
+    .config((process.env.NODE_ENV !== 'production') ? '' : SENTRY)
     .install();
 
 render((
