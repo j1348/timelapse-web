@@ -1,5 +1,6 @@
 require('dotenv').config();
 const path = require('path');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
@@ -54,10 +55,14 @@ module.exports = {
             test: /\.(scss|css)$/,
             use: ExtractTextPlugin.extract({
                     fallback: 'style-loader?sourceMap',
-                    use: [
-                    'css-loader?sourceMap',
-                    'postcss-loader?sourceMap',
-                    'sass-loader?sourceMap',
+                    use: [{
+                            loader: 'css-loader?sourceMap',
+                            options: {
+                                minimize: ENV === 'production'
+                            }
+                        },
+                        'postcss-loader?sourceMap',
+                        'sass-loader?sourceMap',
                     ],
                 }),
         },{
@@ -67,6 +72,7 @@ module.exports = {
         }]
     },
     plugins: [
+        new CleanWebpackPlugin(['dist']),
         new CopyWebpackPlugin([
             { from: 'dummy.html' },
             { from: '_redirects' }
@@ -100,7 +106,7 @@ module.exports = {
         })
     ] : []),
     stats: {
-    colors: true,
+        colors: true,
     },
     devServer: {
         port: process.env.PORT || 8000,
