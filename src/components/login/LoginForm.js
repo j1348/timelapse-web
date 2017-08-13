@@ -54,14 +54,19 @@ class LoginForm extends React.Component {
         this.setState({ token: null });
     }
     render() {
-        return (<form name="login" target="dummy" onSubmit={(e) => { this.onSubmit(e); }} method="POST">
+        return (<form name="login" target="dummy"
+                        onSubmit={(e) => { this.onSubmit(e); }} method="POST">
         <div className="form-control">
             <label htmlFor="email">email</label>
-            <input type="text" name="email" id="email" ref={(val) => { this.email = val; }} onChange={(e) => { this.handleInputChange(e); }} aria-required="true" />
+            <input type="text" name="email" id="email"
+                ref={(val) => { this.email = val; }}
+                onChange={(e) => { this.handleInputChange(e); }} aria-required="true" />
         </div>
         <div className="form-control">
             <label htmlFor="password">password</label>
-            <input type="password" name="password" id="password" ref={(val) => { this.password = val; }} onChange={(e) => { this.handleInputChange(e); }} aria-required="true" />
+            <input type="password" name="password" id="password"
+                ref={(val) => { this.password = val; }}
+                onChange={(e) => { this.handleInputChange(e); }} aria-required="true" />
         </div>
         <div className="form-control">
             <button type="submit">Log-In</button>

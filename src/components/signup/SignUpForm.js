@@ -38,7 +38,8 @@ class SignUpForm extends React.Component {
     }
 
     render() {
-        return (<form name="signup" target="dummy" onSubmit={(e) => { this.onSubmit(e); }} className="signup-form" method="POST">
+        return (<form name="signup" target="dummy" onSubmit={(e) => { this.onSubmit(e); }}
+                    className="signup-form" method="POST">
         <div className="form-control">
             <label htmlFor="name">name</label>
             <input type="text" name="name" id="name" aria-required="true" />
@@ -49,11 +50,13 @@ class SignUpForm extends React.Component {
         </div>
         <div className="form-control">
             <label htmlFor="email">email</label>
-            <input type="text" name="email" id="email" autoComplete="off" aria-required="true" />
+            <input type="text" name="email" id="email"
+                autoComplete="off" aria-required="true" />
         </div>
         <div className="form-control">
             <label htmlFor="password">password</label>
-            <input type="password" name="password" id="password" autoComplete="off" aria-required="true" />
+            <input type="password" name="password" id="password"
+                    autoComplete="off" aria-required="true" />
         </div>
         <div className="form-control">
             <button type="submit">Sign-Up</button>

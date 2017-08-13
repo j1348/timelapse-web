@@ -2,43 +2,46 @@ require('dotenv').config();
 const BINPATH = './node_modules/nightwatch/bin/'; // change if required.
 const SCREENSHOT_PATH = "./screenshots/" + require('./package.json').version + "/";
 
-const config = { // we use a nightwatch.conf.js file so we can include comments and helper functions
+const config = {
     "src_folders": [
-    "test/main"     // we use /test as the name of our test directory by default. so test/e2e for e2e
+        "test/main"
     ],
     "page_objects_path": "test/pages",
-    "output_folder": "./reports", // reports (test outcome) output by nightwatch
+    "output_folder": "./reports",
     "selenium": {
     "start_process": true,
-    "server_path": BINPATH + "selenium.jar", // downloaded by selenium-download module (see below)
+    "server_path": BINPATH + "selenium.jar",
     "log_path": "",
     "host": "127.0.0.1",
     "port": 4444,
     "cli_args": {
-    "webdriver.chrome.driver" : BINPATH + "chromedriver" // also downloaded by selenium-download
+    "webdriver.chrome.driver" : BINPATH + "chromedriver"
     }
     },
-    "test_workers" : {"enabled" : true, "workers" : "auto"}, // perform tests in parallel where possible
+    "test_workers": {
+        "enabled" : true,
+        "workers" : "auto"
+    }, // perform tests in parallel where possible
     "test_settings": {
     "default": {
-    "launch_url": "http://localhost", // we're testing a Public or "staging" site on Saucelabs
+    "launch_url": "http://localhost",
     "selenium_host": "ondemand.saucelabs.com",
     "selenium_port": 80,
     "selenium_start_process": false,
     "silent": true,
     "screenshots": {
-        "enabled": false, // save screenshots to this directory (excluded by .gitignore)
+        "enabled": false,
         "path": SCREENSHOT_PATH
     },
-    "username" : process.env.SAUCE_USERNAME,     // if you want to use Saucelabs remember to
-    "access_key" : process.env.SAUCE_ACCESS_KEY, // export your environment variables (see readme)
+    "username" : process.env.SAUCE_USERNAME,
+    "access_key" : process.env.SAUCE_ACCESS_KEY,
     "desiredCapabilities": {
         "javascriptEnabled": true,
         "acceptSslCerts": true,
         "tunnel-identifier": "${TRAVIS_JOB_NUMBER}"
     },
     "globals": {
-        "waitForConditionTimeout": 10000,    // wait for content on the page bsauefore continuing
+        "waitForConditionTimeout": 10000,
         "data": require('./test/context/index.js')
     }
     },
@@ -52,7 +55,7 @@ const config = { // we use a nightwatch.conf.js file so we can include comments 
         "path": SCREENSHOT_PATH
     }, // this allows us to control the
     "globals": {
-        "waitForConditionTimeout": 15000 // on localhost sometimes internet is slow so wait...
+        "waitForConditionTimeout": 15000
     },
     "desiredCapabilities": {
         "browserName": "chrome",
