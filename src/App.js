@@ -23,13 +23,13 @@ export default class App extends Component {
         return (<div className="container">
             <Todos token={this.state.token} />
             <div className="logout-form">
-            <div className="form-control">
-                <button name="close" onClick={() => { this.disconnect(); }}>
-                <svg className="icon-disconnect">
-                    <use xlinkHref="#icon-disconnect" />
-                </svg>
-                </button>
-            </div>
+                <div className="form-control">
+                    <button name="close" onClick={() => { this.disconnect(); }}>
+                        <svg className="icon-disconnect">
+                            <use xlinkHref="#icon-disconnect" />
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>);
     }

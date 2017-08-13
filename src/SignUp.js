@@ -4,9 +4,9 @@ import SignUpForm from './components/signup/SignUpForm';
 
 export default function () {
     return (<SignUpForm
-    onSuccess={(token) => {
-        browserHistory.push(`/#/token/${token}`);
-        window.location.reload();
-    }}
+        onSuccess={(token) => {
+            browserHistory.push(`/#/token/${token}`);
+            window.location.reload();
+        }}
     />);
 }

@@ -56,13 +56,19 @@ module.exports = {
             use: ExtractTextPlugin.extract({
                     fallback: 'style-loader?sourceMap',
                     use: [{
-                            loader: 'css-loader?sourceMap',
+                            loader: 'css-loader',
                             options: {
-                                minimize: ENV === 'production'
+                                minimize: ENV === 'production',
+                                sourceMap: true,
                             }
                         },
                         'postcss-loader?sourceMap',
-                        'sass-loader?sourceMap',
+                        {
+                            loader: 'sass-loader',
+                            options: {
+                                sourceMap: true
+                            }
+                        }
                     ],
                 }),
         },{
@@ -88,7 +94,6 @@ module.exports = {
         new ExtractTextPlugin({
             filename: 'style.css',
             allChunks: true,
-            disable: ENV === 'production',
         }),
         new HtmlWebpackPlugin({
             template: './index.html',
@@ -98,7 +103,7 @@ module.exports = {
     ].concat(ENV === 'production' ? [
         new webpack.optimize.UglifyJsPlugin({
             minimize: true,
-            sourcemap: false,
+            sourcemap: true,
             compress: {
                 warnings: false,
             },
