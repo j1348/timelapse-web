@@ -23,44 +23,44 @@ class SignUpForm extends React.Component {
             method: 'POST',
             body: JSON.stringify(body)
         }).then(response => response.json())
-        .then((data) => {
-            if (data.error) {
-                Alert.warning(data.message, {
-                    position: 'top',
-                    timeout: 5000
-                });
-                return;
-            }
+            .then((data) => {
+                if (data.error) {
+                    Alert.warning(data.message, {
+                        position: 'top',
+                        timeout: 5000
+                    });
+                    return;
+                }
 
-            this.props.onSuccess(data.token);
-            setTimeout(() => { target.submit(); }, 0);
-        });
+                this.props.onSuccess(data.token);
+                setTimeout(() => { target.submit(); }, 0);
+            });
     }
 
     render() {
         return (<form name="signup" target="dummy" onSubmit={(e) => { this.onSubmit(e); }}
-                    className="signup-form" method="POST">
-        <div className="form-control">
-            <label htmlFor="name">name</label>
-            <input type="text" name="name" id="name" aria-required="true" />
-        </div>
-        <div className="form-control">
-            <label htmlFor="username">username</label>
-            <input type="text" name="username" id="username" aria-required="true" />
-        </div>
-        <div className="form-control">
-            <label htmlFor="email">email</label>
-            <input type="text" name="email" id="email"
-                autoComplete="off" aria-required="true" />
-        </div>
-        <div className="form-control">
-            <label htmlFor="password">password</label>
-            <input type="password" name="password" id="password"
+            className="signup-form" method="POST">
+            <div className="form-control">
+                <label htmlFor="name">name</label>
+                <input type="text" name="name" id="name" aria-required="true" />
+            </div>
+            <div className="form-control">
+                <label htmlFor="username">username</label>
+                <input type="text" name="username" id="username" aria-required="true" />
+            </div>
+            <div className="form-control">
+                <label htmlFor="email">email</label>
+                <input type="text" name="email" id="email"
                     autoComplete="off" aria-required="true" />
-        </div>
-        <div className="form-control">
-            <button type="submit">Sign-Up</button>
-        </div>
+            </div>
+            <div className="form-control">
+                <label htmlFor="password">password</label>
+                <input type="password" name="password" id="password"
+                    autoComplete="off" aria-required="true" />
+            </div>
+            <div className="form-control">
+                <button type="submit">Sign-Up</button>
+            </div>
         </form>);
     }
 }

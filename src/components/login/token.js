@@ -3,7 +3,7 @@ function QueryString() {
     const vars = window.location.search.substring(1).split('&');
     for (let i = 0; i < vars.length; i += 1) {
         const pair = vars[i].split('=');
-            // If first entry with this name
+        // If first entry with this name
         if (typeof qs[pair[0]] === 'undefined') {
             qs[pair[0]] = decodeURIComponent(pair[1]);
             // If second entry with this name
