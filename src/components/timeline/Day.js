@@ -13,10 +13,10 @@ class Day extends React.Component {
         const now = moment();
         this.state = {
             now,
-            editorState: createEditorState()
+            editorState: createEditorState(),
         };
 
-        this.onChange = (editorState) => {
+        this.onChange = editorState => {
             this.setState({ now, editorState });
         };
     }
@@ -26,19 +26,26 @@ class Day extends React.Component {
         if (typeof d === 'number') {
             const m = this.state.now.add('d', d);
             const classNames = ['day'];
-            const dayOff = (DAY_OFF.indexOf(this.state.now.weekday()) !== -1)
-                ? 'day--off' : '';
+            const dayOff =
+                DAY_OFF.indexOf(this.state.now.weekday()) !== -1
+                    ? 'day--off'
+                    : '';
             let month = '';
 
             if (m.daysInMonth() === m.date()) {
-                month = (<div className="month">
-                    <h3>{m.format('MMMM YYYY')}</h3>
-                </div>);
+                month = (
+                    <div className="month">
+                        <h3>
+                            {m.format('MMMM YYYY')}
+                        </h3>
+                    </div>
+                );
             }
 
             classNames.push(dayOff);
 
-            if (!d) { // today
+            if (!d) {
+                // today
                 classNames.push('day--today');
 
                 // in 15 minutes
@@ -49,44 +56,62 @@ class Day extends React.Component {
 
                 editorState.placeholder = 'placeholder';
 
-                return (<div>
-                    { month }
-                    <div className={classNames.join(' ')} key={this.m}>
-                        <h4>
-                            <span className="day__oftheweek">{m.format('dddd')}</span>
-                            <span className="day__number">{m.format('DD')}</span>
-                        </h4>
-                        <div className="day__content">
-                            <div className="day__hour">{soon.format('LT')}</div>
-                            <div className="day__txt">
-                                <Editor
-                                    editorState={editorState}
-                                    placeholder="Here it is..."
-                                    onChange={this.onChange}
-                                />
+                return (
+                    <div>
+                        {month}
+                        <div className={classNames.join(' ')} key={this.m}>
+                            <h4>
+                                <span className="day__oftheweek">
+                                    {m.format('dddd')}
+                                </span>
+                                <span className="day__number">
+                                    {m.format('DD')}
+                                </span>
+                            </h4>
+                            <div className="day__content">
+                                <div className="day__hour">
+                                    {soon.format('LT')}
+                                </div>
+                                <div className="day__txt">
+                                    <Editor
+                                        editorState={editorState}
+                                        placeholder="Here it is..."
+                                        onChange={this.onChange}
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>);
+                );
             }
-            return (<div>
-                { month }
-                <div className={classNames.join(' ')} key={this.m}>
-                    <h5>
-                        <span className="day__oftheweek">{m.format('dddd')}</span>
-                        <span className="day__number">{m.format('DD')}</span>
-                    </h5>
-                    <div className="day__content" />
+            return (
+                <div>
+                    {month}
+                    <div className={classNames.join(' ')} key={this.m}>
+                        <h5>
+                            <span className="day__oftheweek">
+                                {m.format('dddd')}
+                            </span>
+                            <span className="day__number">
+                                {m.format('DD')}
+                            </span>
+                        </h5>
+                        <div className="day__content" />
+                    </div>
                 </div>
-            </div>);
+            );
         }
 
-        return (<div>nothing to display {d}</div>);
+        return (
+            <div>
+                nothing to display {d}
+            </div>
+        );
     }
 }
 
 Day.propTypes = {
-    d: React.PropTypes.number.isRequired
+    d: React.PropTypes.number.isRequired,
 };
 
 export default Day;

@@ -13,16 +13,15 @@ import '../css/style.scss';
 
 const SENTRY = 'https://9b7d1cedf93249389f90839b13dbf4c5@sentry.io/129263';
 
-Raven
-    .config((process.env.NODE_ENV !== 'production') ? '' : SENTRY)
-    .install();
+Raven.config(process.env.NODE_ENV !== 'production' ? '' : SENTRY).install();
 
-render((
+render(
     <Router history={hashHistory}>
-        <Route path="/" component={Header} >
+        <Route path="/" component={Header}>
             <Route path="/login" component={Login} />
             <Route path="/signup" component={SignUp} />
         </Route>
         <Route path="/token/:token" component={App} />
-    </Router>
-), document.getElementById('main'));
+    </Router>,
+    document.getElementById('main')
+);

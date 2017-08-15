@@ -5,4 +5,4 @@ app.use(express.static(__dirname + '/dist/'));
 
 var port = process.env.PORT || 8000;
 app.listen(port);
-console.log('server started '+ port);
+console.log('server started ' + port);

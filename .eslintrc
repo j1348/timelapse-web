@@ -35,12 +35,8 @@
     "babel",
     "react"
   ],
-  "extends": [
-    "airbnb"
-  ],
   "rules": {
-    "indent": ["error", 4],
-    "comma-dangle": ["error", "never"],
+    'comma-dangle': [ERROR, 'always-multiline'],
     "react/jsx-key": 2,
     "react/jsx-indent": 0,
     "react/jsx-pascal-case": 2,

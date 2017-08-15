@@ -20,20 +20,27 @@ class Todos extends React.Component {
     }
 
     componentWillMount() {
-        todoService.get(this.props.token)
-            .then((tmp) => {
-                const todos = [{
+        todoService.get(this.props.token).then(tmp => {
+            const todos = [
+                {
                     name: 'new todo',
-                    editorState: createEditorState()
-                }].concat(tmp.map((todo) => {
-                    const data = todo.raw ? JSON.parse(todo.raw) : undefined;
-                    const newTodo = todo;
-                    newTodo.editorState = createEditorState(data);
-                    return newTodo;
-                }).reverse());
+                    editorState: createEditorState(),
+                },
+            ].concat(
+                tmp
+                    .map(todo => {
+                        const data = todo.raw
+                            ? JSON.parse(todo.raw)
+                            : undefined;
+                        const newTodo = todo;
+                        newTodo.editorState = createEditorState(data);
+                        return newTodo;
+                    })
+                    .reverse()
+            );
 
-                this.setState({ todos });
-            });
+            this.setState({ todos });
+        });
     }
 
     delete(todo, i) {
@@ -44,23 +51,34 @@ class Todos extends React.Component {
     }
 
     render() {
-        return (<div className="todos">
-            { this.state.todos.map((todo, i) => (<div className="todo" key={i}>
-                <svg className="icon-close" onClick={() => { this.delete(todo, i); }}>
-                    <use xlinkHref="#icon-close" />
-                </svg>
-                <Editor
-                    editorState={todo.editorState}
-                    placeholder="..."
-                    onChange={(editorState) => { this.onChange(editorState, i); }}
-                />
-            </div>)) }
-        </div>);
+        return (
+            <div className="todos">
+                {this.state.todos.map((todo, i) =>
+                    <div className="todo" key={i}>
+                        <svg
+                            className="icon-close"
+                            onClick={() => {
+                                this.delete(todo, i);
+                            }}
+                        >
+                            <use xlinkHref="#icon-close" />
+                        </svg>
+                        <Editor
+                            editorState={todo.editorState}
+                            placeholder="..."
+                            onChange={editorState => {
+                                this.onChange(editorState, i);
+                            }}
+                        />
+                    </div>
+                )}
+            </div>
+        );
     }
 }
 
 Todos.propTypes = {
-    token: React.PropTypes.string.isRequired
+    token: React.PropTypes.string.isRequired,
 };
 
 export default Todos;
