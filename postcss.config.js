@@ -2,7 +2,5 @@
 const autoprefixer = require('autoprefixer');
 
 module.exports = {
-    plugins: [
-        autoprefixer({browsers: '> 1%, Last 2 versions, IE 9'}),
-    ],
+    plugins: [autoprefixer({ browsers: '> 1%, Last 2 versions, IE 9' })],
 };

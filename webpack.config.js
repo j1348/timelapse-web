@@ -38,8 +38,8 @@ const faviconPlugin = new FaviconsWebpackPlugin({
         opengraph: false,
         twitter: false,
         yandex: false,
-        windows: false
-    }
+        windows: false,
+    },
 });
 
 module.exports = {
@@ -51,44 +51,45 @@ module.exports = {
         filename: 'bundle.js',
     },
     module: {
-        rules: [{
-            test: /\.(scss|css)$/,
-            use: ExtractTextPlugin.extract({
+        rules: [
+            {
+                test: /\.(scss|css)$/,
+                use: ExtractTextPlugin.extract({
                     fallback: 'style-loader?sourceMap',
-                    use: [{
+                    use: [
+                        {
                             loader: 'css-loader',
                             options: {
                                 minimize: ENV === 'production',
                                 sourceMap: true,
-                            }
+                            },
                         },
                         'postcss-loader?sourceMap',
                         {
                             loader: 'sass-loader',
                             options: {
-                                sourceMap: true
-                            }
-                        }
+                                sourceMap: true,
+                            },
+                        },
                     ],
                 }),
-        },{
-            test: /\.js$/,
-            use: ['babel-loader'],
-            include: path.join(__dirname, 'src'),
-        }]
+            },
+            {
+                test: /\.js$/,
+                use: ['babel-loader'],
+                include: path.join(__dirname, 'src'),
+            },
+        ],
     },
     plugins: [
         new CleanWebpackPlugin(['dist']),
-        new CopyWebpackPlugin([
-            { from: 'dummy.html' },
-            { from: '_redirects' }
-        ]),
+        new CopyWebpackPlugin([{ from: 'dummy.html' }, { from: '_redirects' }]),
         faviconPlugin,
         new webpack.DefinePlugin({
             'process.env': {
                 API_URL: JSON.stringify(process.env.API_URL),
-                NODE_ENV: JSON.stringify(process.env.NODE_ENV)
-            }
+                NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+            },
         }),
         new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /fr/),
         new ExtractTextPlugin({
@@ -98,18 +99,22 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './index.html',
             hash: true,
-            inject: true
-        })
-    ].concat(ENV === 'production' ? [
-        new webpack.optimize.UglifyJsPlugin({
-            minimize: true,
-            sourcemap: true,
-            compress: {
-                warnings: false,
-            },
-            comments: /^\**!|^ [0-9]+ $|@preserve|@license/
-        })
-    ] : []),
+            inject: true,
+        }),
+    ].concat(
+        ENV === 'production'
+            ? [
+                  new webpack.optimize.UglifyJsPlugin({
+                      minimize: true,
+                      sourcemap: true,
+                      compress: {
+                          warnings: false,
+                      },
+                      comments: /^\**!|^ [0-9]+ $|@preserve|@license/,
+                  }),
+              ]
+            : []
+    ),
     stats: {
         colors: true,
     },
@@ -120,18 +125,22 @@ module.exports = {
         disableHostCheck: true,
         contentBase: './',
         historyApiFallback: true,
-        proxy: [{
-            path: '/user/login',
-            logLevel: 'debug',
-            target: API_URL,
-        }, {
-            path: '/user',
-            logLevel: 'debug',
-            target: API_URL,
-        }, {
-            path: '/todo',
-            logLevel: 'debug',
-            target: API_URL,
-        }]
-    }
+        proxy: [
+            {
+                path: '/user/login',
+                logLevel: 'debug',
+                target: API_URL,
+            },
+            {
+                path: '/user',
+                logLevel: 'debug',
+                target: API_URL,
+            },
+            {
+                path: '/todo',
+                logLevel: 'debug',
+                target: API_URL,
+            },
+        ],
+    },
 };

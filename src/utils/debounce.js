@@ -5,7 +5,7 @@
 // leading edge, instead of the trailing.
 function debounce(func, wait, immediate) {
     let timeout;
-    return function (...args) {
+    return function(...args) {
         const context = this;
         function later() {
             timeout = null;

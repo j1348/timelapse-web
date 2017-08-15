@@ -11,8 +11,8 @@ function updateTodo(headers, todo, raw) {
         method: 'PUT',
         body: JSON.stringify({
             name: todo.name,
-            raw
-        })
+            raw,
+        }),
     }).then(response => response.json());
 }
 
@@ -22,8 +22,8 @@ function save(headers, todo, raw) {
         method: 'POST',
         body: JSON.stringify({
             name: todo.name,
-            raw
-        })
+            raw,
+        }),
     }).then(response => response.json());
 }
 
@@ -33,8 +33,8 @@ function deleteTodo(token, todo) {
         headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`
-        }
+            Authorization: `Bearer ${token}`,
+        },
     }).then(response => response.json());
 }
 
@@ -44,8 +44,8 @@ function getTodo(token) {
         headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`
-        }
+            Authorization: `Bearer ${token}`,
+        },
     }).then(response => response.json());
 }
 
@@ -53,11 +53,13 @@ export default {
     get: getTodo,
     delete: deleteTodo,
     createOrUpdateTodo: (token, todo) => {
-        const raw = JSON.stringify(convertToRaw(todo.editorState.getCurrentContent()));
+        const raw = JSON.stringify(
+            convertToRaw(todo.editorState.getCurrentContent())
+        );
         const headers = {
             Accept: 'application/json',
             'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`
+            Authorization: `Bearer ${token}`,
         };
 
         if (todo._id) {
@@ -65,9 +67,8 @@ export default {
             return;
         }
 
-        save(headers, todo, raw)
-            .then((newTodo) => {
-                todo._id = newTodo._id;
-            });
-    }
+        save(headers, todo, raw).then(newTodo => {
+            todo._id = newTodo._id;
+        });
+    },
 };
