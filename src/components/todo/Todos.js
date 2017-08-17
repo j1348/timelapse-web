@@ -29,9 +29,7 @@ class Todos extends React.Component {
             ].concat(
                 tmp
                     .map(todo => {
-                        const data = todo.raw
-                            ? JSON.parse(todo.raw)
-                            : undefined;
+                        const data = todo.raw ? JSON.parse(todo.raw) : undefined;
                         const newTodo = todo;
                         newTodo.editorState = createEditorState(data);
                         return newTodo;
@@ -66,6 +64,7 @@ class Todos extends React.Component {
                         <Editor
                             editorState={todo.editorState}
                             placeholder="..."
+                            sideButtons={[]}
                             onChange={editorState => {
                                 this.onChange(editorState, i);
                             }}
