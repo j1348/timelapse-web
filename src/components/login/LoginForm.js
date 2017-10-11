@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Alert from 'react-s-alert';
 import { getToken } from './token';
 
@@ -105,7 +106,7 @@ class LoginForm extends React.Component {
 }
 
 LoginForm.propTypes = {
-    onSuccess: React.PropTypes.func.isRequired,
+    onSuccess: PropTypes.func.isRequired,
 };
 
 export default LoginForm;
