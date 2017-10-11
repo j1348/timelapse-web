@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Alert from 'react-s-alert';
 
 const API_URL = process.env.API_URL;
@@ -98,7 +99,7 @@ class SignUpForm extends React.Component {
 }
 
 SignUpForm.propTypes = {
-    onSuccess: React.PropTypes.func.isRequired,
+    onSuccess: PropTypes.func.isRequired,
 };
 
 export default SignUpForm;

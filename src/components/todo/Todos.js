@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { createEditorState, Editor } from 'medium-draft';
 import todoService from './todoService';
 import debounce from '../../utils/debounce';
@@ -77,7 +78,7 @@ class Todos extends React.Component {
 }
 
 Todos.propTypes = {
-    token: React.PropTypes.string.isRequired,
+    token: PropTypes.string.isRequired,
 };
 
 export default Todos;
