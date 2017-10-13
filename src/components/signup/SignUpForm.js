@@ -1,7 +1,11 @@
 import React from 'react';
 import Alert from 'react-s-alert';
+import render from 'react-dom';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 const API_URL = process.env.API_URL;
+// create a google recaptcha key in https://www.google.com/recaptcha/admin#list and add to .env;
+const API_GOOGLE_KEY = process.env.API_GOOGLE_KEY;
 
 class SignUpForm extends React.Component {
     constructor(props) {
@@ -87,6 +91,12 @@ class SignUpForm extends React.Component {
                         id="password"
                         autoComplete="off"
                         aria-required="true"
+                    />
+                </div>
+                <div className="form-control">
+                    <ReCAPTCHA
+                        ref="recaptcha"
+                        sitekey= {API_GOOGLE_KEY}
                     />
                 </div>
                 <div className="form-control">
