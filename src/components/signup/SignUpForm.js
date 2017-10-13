@@ -7,10 +7,6 @@ const API_URL = process.env.API_URL;
 // create a google recaptcha key in https://www.google.com/recaptcha/admin#list and add to .env;
 const API_GOOGLE_KEY = process.env.API_GOOGLE_KEY;
 
-function onChange(value) {
-    console.log("Captcha value:", value);
-}
-
 class SignUpForm extends React.Component {
     constructor(props) {
         super(props);
@@ -101,7 +97,6 @@ class SignUpForm extends React.Component {
                     <ReCAPTCHA
                         ref="recaptcha"
                         sitekey= {API_GOOGLE_KEY}
-                        onChange={onChange}
                     />
                 </div>
                 <div className="form-control">
