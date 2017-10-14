@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import Alert from 'react-s-alert';
+import RouteWithSubRoutes from './router/RouteWithSubRoutes'
 
 export default function(props) {
     return (
@@ -32,7 +33,9 @@ export default function(props) {
                         </li>
                     </ul>
                 </nav>
-                {props.children}
+            {props.routes.map((route, i) => (
+                <RouteWithSubRoutes key={i} {...route}/>
+            ))}
             </div>
         </div>
     );
