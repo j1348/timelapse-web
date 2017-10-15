@@ -4,11 +4,10 @@ node_js:
 - '6'
 script:
 - yarn run lint
-- yarn run build
-#- yarn run start &
-#- yarn global add nightwatch
-#- yarn run sauce
-#- pkill node
+- yarn run start &
+- yarn global add nightwatch
+- yarn run sauce
+- pkill node
 cache:
   yarn: true
   directories:
@@ -24,6 +23,7 @@ after_success:
 branches:
   only:
   - master
+  - sauceLab
 notifications:
   slack:
     secure: b7rIINdgPIaEQJ6HUkkIHNyUpeQuUQWBVYp76uGyoxFtS8a1aaoujlpxbtUrMWNlYstYxqtCeHiCgZB1Y7FyZEJnsw9prAUoS5q34gPZNjMXOq98MLh+m9Jh+cgGaQZS6PDa3kAeihc1wOSQVzIH1kNQIXPErTZ2dQjMTl3n1Wu/gTwUjN123ICzNHMsSnBKZgipfo5taVZvOF2wvRCFlgziAkRYhukRghpd883eN15UnAwhoKSdEBxzr1S8mKo5Ekl8EgmZYnHU7zQUhrh1x2l6tm2mj0U8qsYcZLCp9qv/u+3sO5t1VL3NkAQnnrvzuEvf4fypSWd9y/+IIbje/6S4JnSTHrIkAiuFd5ltiEZyLk6i0tqT/3l/BDfs3+/L3jdhIJQMsE3Ns8++TrW4a8SaUjlKIxzml1UJiLGhUk8sx+rkQS+IM7hFcZ6QDFiESeN5L/s73LHrA0d3rTjRFSweHss+8pbcYDMI4hFV9Nubg4DXSQ8u/Ph92oTOZRCov9CQwTlH/T997lVKeYqXsq4pZcYIFnJXhkGaoWOeSyOnh3vo92t0T81HpxDdfoQLZPcjKDJkMq/GQ24o0Ely5UPFZSL6cFCm52mj01B1cSYZ3wK7ieQ7A/idufK3S2885BVgtKJPYzHBDQGi4GAE40zOCFwONsyU1vEt6B7dKiQ=
