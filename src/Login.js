@@ -1,14 +1,16 @@
 import React from 'react';
-import { browserHistory } from 'react-router';
+import {withRouter} from "react-router-dom";
 import LoginForm from './components/login/LoginForm';
 
-export default function() {
+function Login(props) {
     return (
         <LoginForm
             onSuccess={token => {
-                browserHistory.push(`/#/token/${token}`);
+                props.history.push(`/#/token/${token}`);
                 window.location.reload();
             }}
         />
     );
 }
+
+export default withRouter(Login)
