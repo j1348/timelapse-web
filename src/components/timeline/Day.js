@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { createEditorState, Editor } from 'medium-draft';
 import moment from 'moment';
 
@@ -111,7 +112,7 @@ class Day extends React.Component {
 }
 
 Day.propTypes = {
-    d: React.PropTypes.number.isRequired,
+    d: PropTypes.number.isRequired,
 };
 
 export default Day;
