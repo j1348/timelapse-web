@@ -10,14 +10,12 @@ class App extends Component {
         this.state = {};
     }
     componentWillMount() {
-        this.state.token = this.props.params.token;
-        this.props.history.push("/#/");
+        this.state.token = this.props.match.params.token;
     }
     disconnect() {
         resetToken();
         this.state.token = null;
         this.props.history.push("/");
-        window.location.reload();
     }
     render() {
         return (

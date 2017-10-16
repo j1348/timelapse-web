@@ -1,8 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router';
 import { NavLink } from 'react-router-dom'
-import Login from './Login';
-import SignUp from './SignUp';
 import Alert from 'react-s-alert';
 
 export default function(props) {
@@ -36,8 +33,6 @@ export default function(props) {
                             </li>
                         </ul>
                     </nav>
-                    <Route path="/login" component={Login} />
-                    <Route path="/signup" component={SignUp} />
                 </div>
             </div>
         </div>

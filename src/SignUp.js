@@ -1,15 +1,18 @@
 import React from 'react';
 import SignUpForm from './components/signup/SignUpForm';
-import {withRouter} from "react-router-dom";
+import {withRouter, Route} from "react-router-dom";
+import Header from './Header';
 
 function SignUp(props) {
     return (
-        <SignUpForm
-            onSuccess={token => {
-                props.history.push(`/#/token/${token}`);
-                window.location.reload();
-            }}
-        />
+        <div>
+            <Route path="/" component={Header}/>
+            <SignUpForm
+                onSuccess={token => {
+                    props.history.push(`/token/${token}`);
+                }}
+            />
+        </div>
     );
 }
 
