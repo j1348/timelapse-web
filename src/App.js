@@ -1,23 +1,21 @@
 import React, { Component } from "react";
-import { browserHistory } from "react-router";
+import {withRouter} from "react-router-dom";
 import { resetToken } from "./components/login/token";
 import Todos from "./components/todo/Todos";
 // import Timeline from './components/timeline/Timeline';
 
-export default class App extends Component {
+class App extends Component {
     constructor() {
         super();
         this.state = {};
     }
     componentWillMount() {
-        this.state.token = this.props.params.token;
-        browserHistory.push("/#/");
+        this.state.token = this.props.match.params.token;
     }
     disconnect() {
         resetToken();
         this.state.token = null;
-        browserHistory.push("/");
-        window.location.reload();
+        this.props.history.push("/");
     }
     render() {
         return (
@@ -41,3 +39,5 @@ export default class App extends Component {
         );
     }
 }
+
+export default withRouter(App)
