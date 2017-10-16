@@ -1,0 +1,19 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.7.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:debug:20170905':
+    - nightwatch > mocha-nightwatch > debug:
+        patched: '2017-10-16T09:50:13.974Z'
+    - favicons-webpack-plugin > favicons > svg2png > phantomjs-prebuilt > extract-zip > debug:
+        patched: '2017-10-16T09:50:13.974Z'
+    - favicons-webpack-plugin > favicons > node-rest-client > debug:
+        patched: '2017-10-16T09:50:13.974Z'
+  'npm:ms:20170412':
+    - nightwatch > mocha-nightwatch > debug > ms:
+        patched: '2017-10-16T09:50:13.974Z'
+    - favicons-webpack-plugin > favicons > svg2png > phantomjs-prebuilt > extract-zip > debug > ms:
+        patched: '2017-10-16T09:50:13.974Z'
+    - favicons-webpack-plugin > favicons > node-rest-client > debug > ms:
+        patched: '2017-10-16T09:50:13.974Z'
