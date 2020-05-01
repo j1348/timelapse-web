@@ -1,0 +1,22 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.14.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-567746:
+    - copy-webpack-plugin > lodash:
+        patched: '2020-05-01T06:33:48.397Z'
+    - favicons-webpack-plugin > lodash:
+        patched: '2020-05-01T06:33:48.397Z'
+    - selenium-download > lodash:
+        patched: '2020-05-01T06:33:48.397Z'
+    - selenium-download > async > lodash:
+        patched: '2020-05-01T06:33:48.397Z'
+    - selenium-download > xml2js > xmlbuilder > lodash:
+        patched: '2020-05-01T06:33:48.397Z'
+    - favicons-webpack-plugin > favicons > node-rest-client > xml2js > xmlbuilder > lodash:
+        patched: '2020-05-01T06:33:48.397Z'
+    - favicons-webpack-plugin > favicons > jimp > load-bmfont > parse-bmfont-xml > xml2js > xmlbuilder > lodash:
+        patched: '2020-05-01T06:33:48.397Z'
+    - favicons-webpack-plugin > favicons > to-ico > resize-img > jimp > load-bmfont > parse-bmfont-xml > xml2js > xmlbuilder > lodash:
+        patched: '2020-05-01T06:33:48.397Z'
