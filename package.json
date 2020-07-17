@@ -60,7 +60,7 @@
         "medium-draft": "^0.5.2",
         "moment": "^2.15.2",
         "nightwatch": "^0.9.12",
-        "postcss-loader": "^2.0.6",
+        "postcss-loader": "^2.1.0",
         "prettier": "^1.5.3",
         "prop-types": "^15.6.0",
         "raven-js": "^3.10.0",
