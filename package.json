@@ -56,7 +56,7 @@
         "copy-webpack-plugin": "^4.0.1",
         "draft-js": "^0.10.1",
         "express": "^4.15.4",
-        "favicons-webpack-plugin": "^0.0.7",
+        "favicons-webpack-plugin": "^5.0.0",
         "medium-draft": "^0.5.2",
         "moment": "^2.15.2",
         "nightwatch": "^0.9.12",
@@ -71,7 +71,7 @@
         "react-router-dom": "^4.2.2",
         "react-s-alert": "^1.2.2",
         "saucelabs": "1.4.0",
-        "selenium-download": "2.0.10",
+        "selenium-download": "2.0.16",
         "string.prototype.startswith": "0.2.0",
         "whatwg-fetch": "^2.0.3"
     },
