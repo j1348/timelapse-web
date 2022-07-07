@@ -58,7 +58,7 @@
         "express": "^4.15.4",
         "favicons-webpack-plugin": "^0.0.7",
         "medium-draft": "^0.5.2",
-        "moment": "^2.15.2",
+        "moment": "^2.29.4",
         "nightwatch": "^0.9.12",
         "postcss-loader": "^2.0.6",
         "prettier": "^1.5.3",
