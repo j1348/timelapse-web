@@ -53,10 +53,10 @@
     },
     "dependencies": {
         "clean-webpack-plugin": "^0.1.16",
-        "copy-webpack-plugin": "^4.0.1",
+        "copy-webpack-plugin": "^4.4.3",
         "draft-js": "^0.10.1",
         "express": "^4.15.4",
-        "favicons-webpack-plugin": "^0.0.7",
+        "favicons-webpack-plugin": "^1.0.0",
         "medium-draft": "^0.5.2",
         "moment": "^2.15.2",
         "nightwatch": "^0.9.12",
