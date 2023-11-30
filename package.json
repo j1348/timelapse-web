@@ -52,14 +52,14 @@
         "webpack-dev-server": "^2.7.1"
     },
     "dependencies": {
-        "clean-webpack-plugin": "^0.1.16",
-        "copy-webpack-plugin": "^4.0.1",
+        "clean-webpack-plugin": "^2.0.0",
+        "copy-webpack-plugin": "^4.3.0",
         "draft-js": "^0.10.1",
         "express": "^4.15.4",
         "favicons-webpack-plugin": "^0.0.7",
         "medium-draft": "^0.5.2",
         "moment": "^2.15.2",
-        "nightwatch": "^0.9.12",
+        "nightwatch": "^1.0.1",
         "postcss-loader": "^2.0.6",
         "prettier": "^1.5.3",
         "prop-types": "^15.6.0",
