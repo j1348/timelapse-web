@@ -59,7 +59,7 @@
         "favicons-webpack-plugin": "^0.0.7",
         "medium-draft": "^0.5.2",
         "moment": "^2.15.2",
-        "nightwatch": "^0.9.12",
+        "nightwatch": "^2.0.1",
         "postcss-loader": "^2.0.6",
         "prettier": "^1.5.3",
         "prop-types": "^15.6.0",
