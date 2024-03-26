@@ -55,7 +55,7 @@
         "clean-webpack-plugin": "^0.1.16",
         "copy-webpack-plugin": "^4.0.1",
         "draft-js": "^0.10.1",
-        "express": "^4.15.4",
+        "express": "^4.19.2",
         "favicons-webpack-plugin": "^0.0.7",
         "medium-draft": "^0.5.2",
         "moment": "^2.15.2",
